@@ -12,8 +12,8 @@
 <body>
   <div class="weather-app">
   <header>
-    <form class="search-form">
-      <input type="search" name="" id="" placeholder="Enter a city..." class="search-form-input" required>
+    <form class="search-form" id="search-form-element">
+      <input type="search" name="" placeholder="Enter a city..." class="search-form-input" id="search-form-input" required>
       <input type="submit" value="Search" class="search-form-button">
     </form>
   </header>
@@ -21,7 +21,7 @@
   <div>
   <main>
     
-    <h1 class="city">Paris</h1>
+    <h1 class="city" id="city">Paris</h1>
     <p class="details">Friday 15:19, broken clouds<br>
     Humidity: <strong>81%</strong>, Wind: <strong>4.12</strong>km/h</p>
   </main>
@@ -34,5 +34,7 @@
     <p>This project was coded by <a href="">Mohsen Heydariani</a> hosted on <a href="">Github</a></p>
   </footer>
 </div>
+
+<script src="src/index.js"></script>
 </body>
 </html>

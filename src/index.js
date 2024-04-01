@@ -35,8 +35,12 @@ function formatDate(date) {
 	let day = week[date.getDay()];
 	let hours = date.getHours();
 	let minutes = date.getMinutes();
+	if (minutes < 10) {
+		minutes = `0${minutes}`;
+	}
 	return `${day} ${hours}:${minutes}`;
 }
+
 function searchCity(city) {
 	//make api call and update the interface
 	let apiKey = "4974a3883e1ocea63dc4b19t8940f018";
@@ -57,3 +61,23 @@ let searchFormElement = document.querySelector("#search-form-element");
 searchFormElement.addEventListener("submit", handleSearchSubmit);
 
 searchCity("Lisbon");
+
+function displayForecast() {
+	let forecastElement = document.querySelector("#forecast");
+	let days = ["Tue", "Wed", "Thu", "Fri", "Sat"];
+	let forecastHtml = "";
+	days.forEach(function (day) {
+		forecastHtml =
+			forecastHtml +
+			`<div class="weather-forecast-day">
+	<div class="weather-forecast-date">${day}</div>
+	<div class="weather-forecast-icon">⛅</div>
+	<div class="weather-forecast-temperatures">
+		<div class="weather-forecast-temperature"><strong>15°</strong></div>
+		<div class="weather-forecast-temperature">9°</div>
+	</div>
+	</div>`;
+	});
+	forecastElement.innerHTML = forecastHtml;
+}
+displayForecast();
